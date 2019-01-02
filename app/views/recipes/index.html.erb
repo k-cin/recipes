@@ -1,0 +1,17 @@
+<h1>Recipes finder app</h1>
+<% if @recipes.empty? %>
+
+<p>no results found</p>
+
+<% else %>
+
+<% @recipes.each do |recipes| %>
+
+<div>
+    <p> <%= link_to(image_tag(recipes['image_url']), recipes['f2f_url'].to_s) %></p>
+    <p> <%= recipes['title'] %></p>
+</div>
+
+<% end %>
+
+<% end %>
