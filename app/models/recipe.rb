@@ -13,7 +13,7 @@ class Recipe
 
   def self.search(term)
     cleaned_up_term = term.gsub(/\s+/, '+')
-    response = get('', query: { q: term })['recipes']
+    response = get('', query: { q: term })['recipes'] || []
     response
   end
 
@@ -25,4 +25,3 @@ class Recipe
     images
   end
 end
-
